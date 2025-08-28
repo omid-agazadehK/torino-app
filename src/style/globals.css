@@ -35,11 +35,12 @@
 
 @theme {
   /* colors */
-  --color-primary: #00cfff;
+  --color-primary: #00b3c7;
   --color-secondary: #ff7a59;
   --color-background: #f5f5f5;
   --color-dark: #282828;
   --color-muted: #555555;
+  --color-header: #f9f9f9;
   /* fonts */
   --font-dana-regular: "dana-regular";
   --font-dana-medium: "dana-medium";
