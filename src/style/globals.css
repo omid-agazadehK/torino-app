@@ -1,2 +1,56 @@
 @import "tailwindcss";
 
+/* font dana */
+@font-face {
+  font-family: dana-regular;
+  src: url(/fonts/Dana/woff2/DanaFaNum-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: dana-medium;
+  src: url(/fonts/Dana/woff2/DanaFaNum-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: dana-DemiBold;
+  src: url(/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+/* font morabba */
+@font-face {
+  font-family: morabba-light;
+  src: url(/fonts/Morabba/woff2/Morabba-light.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: morabba-medium;
+  src: url(/fonts/Morabba/woff2/Morabba-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: morabba-bold;
+  src: url(/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+
+@theme {
+  /* colors */
+  --color-primary: #00cfff;
+  --color-secondary: #ff7a59;
+  --color-background: #f5f5f5;
+  --color-dark: #282828;
+  --color-muted: #555555;
+  /* fonts */
+  --font-dana-regular: "dana-regular";
+  --font-dana-medium: "dana-medium";
+  --font-dana-demiBold: "dana-DemiBold";
+  --font-morabba-light: "morabba-light";
+  --font-morabba-medium: "morabba-medium";
+  --font-morabba-bold: "morabba-bold";
+  /* continaer */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+}
