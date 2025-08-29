@@ -1,9 +1,11 @@
 "use client";
-import { QueryClient } from "@tanstack/react-query";
-function TenStackReactQuery({ childern }) {
-  const queryClient = new QueryClient();
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+function TenStackReactQuery({ children }) {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { staleTime: 1000 * 60 * 5, retry: 1 } },
+  });
   return (
-    <QueryClientProvider client={queryClient}>{childern}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }
 

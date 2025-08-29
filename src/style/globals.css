@@ -12,7 +12,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: dana-DemiBold;
+  font-family: dana-semiBold;
   src: url(/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
   font-display: swap;
 }
@@ -44,7 +44,7 @@
   /* fonts */
   --font-dana-regular: "dana-regular";
   --font-dana-medium: "dana-medium";
-  --font-dana-demiBold: "dana-DemiBold";
+  --font-dana-semiBold: "dana-semiBold";
   --font-morabba-light: "morabba-light";
   --font-morabba-medium: "morabba-medium";
   --font-morabba-bold: "morabba-bold";
@@ -54,4 +54,49 @@
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+.modal-animation {
+  animation: dropIn 0.5s ease-out forwards;
+}
+@keyframes dropIn {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.spinner {
+  border: 4px solid;
+  border-color: #00b3c7 transparent transparent #00b3c7;
+  border-radius: 50%;
+  animation: spin 1s ease-out infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
