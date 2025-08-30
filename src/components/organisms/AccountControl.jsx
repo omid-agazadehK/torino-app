@@ -1,15 +1,16 @@
 "use client";
 import { useGetUserData } from "@/core/services/query";
 import Icons from "../atoms/Icons";
-import Spinner from "../atoms/Spinner";
 import { useState } from "react";
-import ProfileDropDown from "../atoms/ProfileDropDown";
+import ProfileDropDown from "../molecules/ProfileDropDown";
 import UserInfo from "../atoms/UserInfo";
 import ModalContainer from "./container/ModalContainer";
 import RegisterForm from "../molecules/RegisterForm";
+import LoginOtpForm from "../molecules/LoginOtpForm";
 
 function AccountControl() {
   const [isProfileDropDown, setIsProfileDropDown] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [isModal, setIsModal] = useState(false);
   const [step, setStep] = useState(1);
   const { data, error, isPending } = useGetUserData();
@@ -30,9 +31,24 @@ function AccountControl() {
           ورود | خروج
         </button>
       )}
-      <ModalContainer onClose={() => setIsModal(false)} isModal={isModal}>
-        <RegisterForm setIsModal={setIsModal} setStep={setStep} step={step} />
-      </ModalContainer>
+      {step === 1 && (
+        <ModalContainer onClose={() => setIsModal(false)} isModal={isModal}>
+          <RegisterForm
+            setIsModal={setIsModal}
+            setStep={setStep}
+            setPhoneNumber={setPhoneNumber}
+          />
+        </ModalContainer>
+      )}
+      {step === 2 && (
+        <ModalContainer onClose={() => setIsModal(false)} isModal={isModal}>
+          <LoginOtpForm
+            setIsModal={setIsModal}
+            setStep={setStep}
+            phoneNumber={phoneNumber}
+          />
+        </ModalContainer>
+      )}
       {data && (
         <UserInfo onClick={() => setIsProfileDropDown((prev) => !prev)} />
       )}
