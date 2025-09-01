@@ -1,36 +1,32 @@
 "use client";
 import { useGetUserData } from "@/core/services/query";
-import Icons from "../atoms/Icons";
+
 import { useState } from "react";
 import ProfileDropDown from "../molecules/ProfileDropDown";
 import UserInfo from "../atoms/UserInfo";
 import ModalContainer from "./container/ModalContainer";
 import RegisterForm from "../molecules/RegisterForm";
 import LoginOtpForm from "../molecules/LoginOtpForm";
+import Spinner from "../atoms/Spinner";
+import AuthButton from "../atoms/AuthButton";
 
 function AccountControl() {
   const [isProfileDropDown, setIsProfileDropDown] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
   const [isModal, setIsModal] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [step, setStep] = useState(1);
-  const { data, error, isPending } = useGetUserData();
-  // if (isPending)
-  //   return (
-  //     <div className="w-30">
-  //       <Spinner className="size-5 mx-auto" />
-  //     </div>
-  //   );
+  const { data, isPending } = useGetUserData();
+
+  if (isPending)
+    return (
+      <div className="w-30">
+        <Spinner className="mx-auto size-5" />
+      </div>
+    );
+
   return (
     <div className="relative">
-      {!data && (
-        <button
-          onClick={() => setIsModal(true)}
-          className="py-1.5 px-4 text-lg rounded-xl border-2 font-dana-medium border-primary text-primary flex items-center gap-x-1 hover:bg-primary hover:text-white  ease-out transition-colors duration-300 "
-        >
-          <Icons name="profile" className="size-6 " />
-          ورود | خروج
-        </button>
-      )}
+      {!data && <AuthButton setIsModal={setIsModal} setStep={setStep} />}
       {step === 1 && (
         <ModalContainer onClose={() => setIsModal(false)} isModal={isModal}>
           <RegisterForm
@@ -50,9 +46,22 @@ function AccountControl() {
         </ModalContainer>
       )}
       {data && (
-        <UserInfo onClick={() => setIsProfileDropDown((prev) => !prev)} />
+        <UserInfo
+          onClick={(e) => {
+            if (isProfileDropDown === true) {
+              e.stopPropagation();
+              return;
+            }
+            setIsProfileDropDown((prev) => !prev);
+          }}
+        />
       )}
-      {isProfileDropDown && <ProfileDropDown />}
+      {isProfileDropDown && (
+        <ProfileDropDown
+          phoneNumber={data?.mobile}
+          setIsProfileDropDown={setIsProfileDropDown}
+        />
+      )}
     </div>
   );
 }

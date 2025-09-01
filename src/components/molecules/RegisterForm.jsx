@@ -1,11 +1,12 @@
-import React from "react";
-import Icons from "../atoms/Icons";
+"use client";
+import Icon from "../atoms/Icon";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import phoneNumberSchema from "@/core/schema/phoneNumber";
 import { useRegister } from "@/core/services/mutation";
-import SendPhoneNumberButton from "../atoms/SendPhoneNumberButton";
 import PhoneNumberInput from "../atoms/PhoneNumberInput";
+import ModalButton from "../atoms/ModalButton";
+import { toast } from "react-toastify";
 
 function RegisterForm({ setIsModal, setStep, setPhoneNumber }) {
   const {
@@ -16,28 +17,39 @@ function RegisterForm({ setIsModal, setStep, setPhoneNumber }) {
   } = useForm({
     resolver: yupResolver(phoneNumberSchema),
   });
-  const { isPending, mutate } = useRegister(reset, setStep);
+
+  const { isPending, mutate } = useRegister();
+
   const onSubmit = (inputData) => {
-    setPhoneNumber(inputData.phoneNumber.trim());
-    mutate(inputData);
+    const phoneNumber = inputData.phoneNumber.trim();
+    setPhoneNumber(phoneNumber);
+    mutate(phoneNumber, {
+      onSuccess: (data) => {
+        toast.success(data.message + " " + data.code);
+        setStep(2);
+        reset();
+      },
+      onError: (err) => console.log(err),
+    });
   };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="register-modal-animation bg-white transition-all duration-200 relative rounded-2xl  px-9 flex flex-col py-10"
+      className="register-modal-animation relative flex flex-col rounded-2xl bg-white px-9 py-10 transition-all duration-200"
     >
-      <Icons
+      <Icon
         name="cross"
         onclick={() => {
-          setIsModal(false), reset(), setPhoneNumber("");
+          (setIsModal(false), reset(), setPhoneNumber(""));
         }}
-        className="size-6 absolute top-2 left-2 cursor-pointer"
+        className="absolute top-2 left-2 size-6 cursor-pointer"
       />
-      <h4 className="mt-5 w-full text-center font-dana-semiBold text-3xl text-dark">
+      <h4 className="font-dana-semiBold text-dark mt-5 w-full text-center text-3xl">
         ورود به تورینو
       </h4>
       <PhoneNumberInput register={register} errors={errors} />
-      <SendPhoneNumberButton isPending={isPending} title="ارسال کد تایید" />
+      <ModalButton isPending={isPending} title="ارسال کد تایید" />
     </form>
   );
 }

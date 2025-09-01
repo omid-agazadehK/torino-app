@@ -1,30 +1,51 @@
-import { useEffect, useState } from "react";
-import Icons from "../atoms/Icons";
+"use client";
+import { useState } from "react";
+import Icon from "../atoms/Icon";
 import OTPInput from "react-otp-input";
-import SendPhoneNumberButton from "../atoms/SendPhoneNumberButton";
 import { useLogin } from "@/core/services/mutation";
-import Timer from "../atoms/Timer";
+import ModalButton from "../atoms/ModalButton";
+import { setCookie } from "@/core/utils/cookies";
+import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-toastify";
+import OtpTimer from "./OtpTimer";
 
-function LoginOtpForm({ phoneNumber, setStep }) {
+function LoginOtpForm({ phoneNumber, setStep, setIsModal }) {
+  const queryClient = useQueryClient();
   const [otp, setOtp] = useState("");
-  const [error, setError] = useState("");
 
-  const { mutate, isPending } = useLogin(setError);
-  const submitHandler = (e) => {
+  const { mutate: loginHandler, isPending, error } = useLogin();
+
+  function submitHandler(e) {
     e.preventDefault();
-    mutate({ phoneNumber, otp });
-  };
+    if (otp.length < 6) return;
+    loginHandler(
+      { phoneNumber, otp },
+      {
+        onSuccess: (data) => {
+          setStep(null);
+          setIsModal(false);
+          setOtp(1);
+          setCookie("accessToken", data.accessToken, 30);
+          setCookie("refreshToken", data.refreshToken, 30);
+          queryClient.invalidateQueries("profile");
+          toast.success("با موفقیت وارد شدید");
+        },
+        onError: (err) => console.log(err),
+      },
+    );
+  }
+
   return (
     <form
       onSubmit={submitHandler}
-      className="login-modal-animation bg-white transition-all duration-200 relative rounded-2xl  px-9 flex flex-col items-center py-10 text-dark"
+      className="login-modal-animation text-dark relative flex flex-col items-center rounded-2xl bg-white px-9 py-10 transition-all duration-200"
     >
-      <Icons
+      <Icon
         onclick={() => setStep(1)}
         name="arrow-left"
-        className="size-6 absolute left-2 top-2 cursor-pointer"
+        className="absolute top-2 left-2 size-6 cursor-pointer"
       />
-      <h4 className="font-dana-semiBold text-3xl mt-5">
+      <h4 className="font-dana-semiBold mt-5 text-3xl">
         کد تایید را وارد کنید.
       </h4>
       <span className="mt-2">کد تایید به شماره {phoneNumber} ارسال شد</span>
@@ -37,14 +58,16 @@ function LoginOtpForm({ phoneNumber, setStep }) {
         renderInput={(props) => (
           <input
             {...props}
-            className="otp-style border border-black/25 rounded-lg focus:outline-0 -scale-x-100 hover:border-secondary   focus:border-primary"
+            className="otp-style hover:border-secondary focus:border-primary -scale-x-100 rounded-lg border border-black/25 focus:outline-0"
           />
         )}
       />
-      <span className="h-10 text-red-500">{error?.message}</span>
-      <Timer />
+      <span className="flex h-10 flex-col items-center justify-center text-red-500">
+        {error?.response?.data?.message}
+      </span>
+      <OtpTimer phoneNumber={phoneNumber} />
 
-      <SendPhoneNumberButton title="ورود به تورینو" isPending={isPending} />
+      <ModalButton title="ورود به تورینو" isPending={isPending} />
     </form>
   );
 }

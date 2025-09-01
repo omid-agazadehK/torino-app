@@ -10,7 +10,7 @@ function Header() {
         src="/images/torino-icon.png"
         alt="torino icon"
         width={150}
-        height={44}
+        height={30}
         className="w-36.5 h-11"
         priority
       />

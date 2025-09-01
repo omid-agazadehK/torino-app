@@ -13,7 +13,7 @@ function Icons({ className = "", name, onclick = null }) {
       );
     case "arrow-down":
       return (
-        <svg viewBox="0 0 1024 1024" class={className}>
+        <svg viewBox="0 0 1024 1024" className={className}>
           <path
             d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z"
             fill="currentcolor"
@@ -47,6 +47,58 @@ function Icons({ className = "", name, onclick = null }) {
             clipRule="evenodd"
             d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z"
             fill="currentcolor"
+          />
+        </svg>
+      );
+    case "profile-1":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className}>
+          <path
+            d="M12.1601 10.87C12.0601 10.86 11.9401 10.86 11.8301 10.87C9.45006 10.79 7.56006 8.84 7.56006 6.44C7.56006 3.99 9.54006 2 12.0001 2C14.4501 2 16.4401 3.99 16.4401 6.44C16.4301 8.84 14.5401 10.79 12.1601 10.87Z"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C19.59 18.81 19.59 16.17 17.17 14.56C14.43 12.73 9.91997 12.73 7.15997 14.56Z"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "logout":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className={className}
+        >
+          <path
+            d="M17.4399 14.62L19.9999 12.06L17.4399 9.5"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M9.76001 12.0601H19.93"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M11.76 20C7.34001 20 3.76001 17 3.76001 12C3.76001 7 7.34001 4 11.76 4"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       );

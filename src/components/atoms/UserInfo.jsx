@@ -1,14 +1,14 @@
-import React from "react";
+import Icon from "./Icon";
 
-function UserInfo({onClick}) {
+function UserInfo({ onClick }) {
   return (
     <div
       onClick={onClick}
-      className="flex items-center justify-center gap-x-1 text-primary cursor-pointer hover:text-secondary transition-colors duration-200"
+      className="text-primary hover:text-secondary flex cursor-pointer items-center justify-center gap-x-1 transition-colors duration-200"
     >
-      <Icons name="profile" className="size-6" />
+      <Icon name="profile" className="size-6" />
       <span className="text-lg">09370841433</span>
-      <Icons name="arrow-down" className="size-6" />
+      <Icon name="arrow-down" className="size-6" />
     </div>
   );
 }

@@ -68,8 +68,20 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.dropDown-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
 .otp-style {
-  width:52px !important;
+  width: 52px !important;
   height: 52px !important;
 }
 .register-modal-animation {

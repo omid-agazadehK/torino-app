@@ -1,4 +1,4 @@
-function SendPhoneNumberButton({ isPending, title }) {
+function ModalButton({ isPending, title }) {
   return (
     <button
       type="submit"
@@ -12,4 +12,4 @@ function SendPhoneNumberButton({ isPending, title }) {
   );
 }
 
-export default SendPhoneNumberButton;
+export default ModalButton;

@@ -1,9 +1,14 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import defaultOptions from "@/core/config/reactQuery";
+import { useState } from "react";
 function TenStackReactQuery({ children }) {
-  const queryClient = new QueryClient({
-    defaultOptions: { queries: { staleTime: 1000 * 60 * 5, retry: 1 } },
-  });
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions,
+      }),
+  );
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
