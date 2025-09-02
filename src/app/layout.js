@@ -3,6 +3,7 @@ import "../style/globals.css";
 import Header from "@/components/organisms/Header";
 import AuthModals from "@/components/templates/AuthModals";
 import Provider from "@/core/providers/Provider";
+import SideBar from "@/components/templates/SideBar";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
         <Provider>
           <Header />
           <AuthModals />
+          <SideBar />
           <main className="w-full flex-1">{children}</main>
           <Footer />
         </Provider>
