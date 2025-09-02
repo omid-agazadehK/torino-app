@@ -38,23 +38,23 @@ function LoginOtpForm({ phoneNumber, setStep, setIsModal }) {
   return (
     <form
       onSubmit={submitHandler}
-      className="login-modal-animation text-dark relative flex flex-col items-center rounded-2xl bg-white px-9 py-10 transition-all duration-200"
+      className="login-modal-animation text-dark relative flex flex-col items-center rounded-2xl bg-white md:px-9 px-6 py-10 transition-all duration-200"
     >
       <Icon
         onclick={() => setStep(1)}
         name="arrow-left"
         className="absolute top-2 left-2 size-6 cursor-pointer"
       />
-      <h4 className="font-dana-semiBold mt-5 text-3xl">
+      <h4 className="font-dana-semiBold mt-5 text-3xl max-sm:text-xl">
         کد تایید را وارد کنید.
       </h4>
-      <span className="mt-2">کد تایید به شماره {phoneNumber} ارسال شد</span>
+      <span className="mt-2 max-sm:text-sm">کد تایید به شماره {phoneNumber} ارسال شد</span>
       <OTPInput
         value={otp}
         onChange={setOtp}
         numInputs={6}
         inputType="number"
-        containerStyle="flex items-center gap-x-3.5 -scale-x-100 mt-4.5"
+        containerStyle="flex items-center md:gap-x-3.5 gap-x-2 -scale-x-100 mt-4.5"
         renderInput={(props) => (
           <input
             {...props}

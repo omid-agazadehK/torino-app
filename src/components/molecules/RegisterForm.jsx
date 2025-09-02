@@ -36,7 +36,7 @@ function RegisterForm({ setIsModal, setStep, setPhoneNumber }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="register-modal-animation relative flex flex-col rounded-2xl bg-white px-9 py-10 transition-all duration-200"
+      className="register-modal-animationm relative flex flex-col rounded-2xl bg-white px-9 py-10 transition-all duration-200"
     >
       <Icon
         name="cross"

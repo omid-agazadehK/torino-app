@@ -3,8 +3,8 @@ function ModalButton({ isPending, title }) {
     <button
       type="submit"
       disabled={isPending}
-      className={`  bg-primary w-125 hover:bg-secondary text-lg font-dana-medium transition-colors duration-200 py-3.5 text-white rounded-lg ${
-        isPending ? "grayscale cursor-not-allowed" : null
+      className={`bg-primary hover:bg-secondary w-full font-dana-medium rounded-lg py-3.5 text-lg text-white transition-colors duration-200 sm:w-125 xs:w-80  ${
+        isPending ? "cursor-not-allowed grayscale" : null
       }`}
     >
       {title}

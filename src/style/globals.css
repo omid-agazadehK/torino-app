@@ -50,10 +50,13 @@
   --font-morabba-bold: "morabba-bold";
   /* continaer */
   --breakpoint-*: initial;
+
+  --breakpoint-xs: 25rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 90rem;
 }
 
 @layer base {
@@ -84,6 +87,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 52px !important;
   height: 52px !important;
 }
+
 .register-modal-animation {
   animation: dropIn 0.5s ease-out forwards;
 }
@@ -122,5 +126,17 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 40rem) {
+  .otp-style{
+     width: 40px !important;
+  height: 40px !important;
+  }
+}
+@media only screen and (max-width: 40rem) {
+  .otp-style{
+     width: 35px !important;
+  height: 35px !important;
   }
 }
