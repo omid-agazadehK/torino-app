@@ -13,8 +13,11 @@ export default function RootLayout({ children }) {
           <Header />
           <AuthModals />
           <SideBar />
-          <main className="w-full flex-1">{children}</main>
+          <main className="w-full flex-1 px-7 lg:p-0">{children}</main>
           <Footer />
+          <span className="w-full py-3 text-center max-sm:text-xs">
+            کلیه حقوق این وب سایت متعلق به تورینو میباشد.
+          </span>
         </Provider>
       </body>
     </html>
