@@ -48,16 +48,21 @@
   --font-morabba-light: "morabba-light";
   --font-morabba-medium: "morabba-medium";
   --font-morabba-bold: "morabba-bold";
-  /* continaer */
-  --breakpoint-*: initial;
 
+  /* breakpoints */
+  --radius-2.5xl: 1.25rem;
+  /* breakpoints */
+  --breakpoint-*: initial;
   --breakpoint-xs: 25rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
 }
-
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+}
 @layer base {
   button:not(:disabled),
   [role="button"]:not(:disabled) {
@@ -128,14 +133,14 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 @media only screen and (max-width: 40rem) {
-  .otp-style{
-     width: 40px !important;
-  height: 40px !important;
+  .otp-style {
+    width: 40px !important;
+    height: 40px !important;
   }
 }
 @media only screen and (max-width: 40rem) {
-  .otp-style{
-     width: 35px !important;
-  height: 35px !important;
+  .otp-style {
+    width: 35px !important;
+    height: 35px !important;
   }
 }
