@@ -34,7 +34,7 @@ function Icons({ className = "", name, onclick = null }) {
           />
         </svg>
       );
-    case "arrow-left":
+    case "arrowLeft":
       return (
         <svg
           viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ function Icons({ className = "", name, onclick = null }) {
           />
         </svg>
       );
-    case "volume-low":
+    case "volumeLow":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className}>
           <path
@@ -156,6 +156,132 @@ function Icons({ className = "", name, onclick = null }) {
             stroke="currentcolor"
             strokeWidth="1.5"
             strokeMiterlimit="10"
+          />
+        </svg>
+      );
+    case "location":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className}>
+          <path
+            d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "global-search":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className}>
+          <path
+            d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M7.99998 3H8.99998C7.04998 8.84 7.04998 15.16 8.99998 21H7.99998"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M15 3C15.97 5.92 16.46 8.96 16.46 12"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M3 16V15C5.92 15.97 8.96 16.46 12 16.46"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M3 9.0001C8.84 7.0501 15.16 7.0501 21 9.0001"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M22 22L21 21"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    case "calendar":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <path
+            d="M14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C20.1752 21.4816 19.3001 21.7706 18 21.8985"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+          />
+          <path
+            d="M7 4V2.5"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+          />
+          <path
+            d="M17 4V2.5"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+          />
+          <path
+            d="M21.5 9H16.625H10.75M2 9H5.875"
+            stroke="currentcolor"
+            strokeWidth="1"
+            strokeLinecap="round"
+          />
+          <path
+            d="M18 17C18 17.5523 17.5523 18 17 18C16.4477 18 16 17.5523 16 17C16 16.4477 16.4477 16 17 16C17.5523 16 18 16.4477 18 17Z"
+            fill="currentcolor"
+          />
+          <path
+            d="M18 13C18 13.5523 17.5523 14 17 14C16.4477 14 16 13.5523 16 13C16 12.4477 16.4477 12 17 12C17.5523 12 18 12.4477 18 13Z"
+            fill="currentcolor"
+          />
+          <path
+            d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z"
+            fill="currentcolor"
+          />
+          <path
+            d="M13 13C13 13.5523 12.5523 14 12 14C11.4477 14 11 13.5523 11 13C11 12.4477 11.4477 12 12 12C12.5523 12 13 12.4477 13 13Z"
+            fill="currentcolor"
+          />
+          <path
+            d="M8 17C8 17.5523 7.55228 18 7 18C6.44772 18 6 17.5523 6 17C6 16.4477 6.44772 16 7 16C7.55228 16 8 16.4477 8 17Z"
+            fill="currentcolor"
+          />
+          <path
+            d="M8 13C8 13.5523 7.55228 14 7 14C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12C7.55228 12 8 12.4477 8 13Z"
+            fill="currentcolor"
           />
         </svg>
       );

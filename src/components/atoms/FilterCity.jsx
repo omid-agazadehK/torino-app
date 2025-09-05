@@ -1,21 +1,28 @@
 import { FilterContext } from "@/core/context/FilterContext";
-import React, { use } from "react";
+import { use } from "react";
+import Icon from "./Icon";
 
 function FilterCity({ name, city }) {
   const { dispatch } = use(FilterContext);
 
   return (
-    <li
-      onClick={(e) =>
-        dispatch({
-          type: "ADD_QUERY",
-          payload: { name, value: e.target.innerHTML },
-        })
-      }
-      key={city.id}
-    >
-      {city.name}
-    </li>
+    <>
+      <li
+        onClick={() =>
+          dispatch({
+            type: "ADD_QUERY",
+            payload: { name, value: city.id },
+          })
+        }
+        className="flex cursor-pointer gap-x-2 px-3 py-4 hover:bg-black/12"
+      >
+        <Icon
+          name={name === "origin" ? "location" : "global-search"}
+          className="size-5"
+        />
+        {city.name}
+      </li>
+    </>
   );
 }
 

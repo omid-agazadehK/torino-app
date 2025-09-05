@@ -1,8 +1,9 @@
 "use client";
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { shamsiToGregorian } from "../utils/date";
 export const FilterContext = createContext();
 const initialState = {
-  query: { origin: "", destination: "", startAt: "", endThis: "" },
+  query: { originId: "", destinationId: "", startDate: "", endDate: "" },
   dropDown: { origin: false, destination: false },
 };
 const reducer = (state, action) => {
@@ -24,15 +25,35 @@ const reducer = (state, action) => {
       };
     case "ADD_QUERY":
       return {
-        ...state,
-        query: { ...state.query, [action.payload.name]: action.payload.value },
+        dropDown: { origin: false, destination: false },
+        query: {
+          ...state.query,
+          [action.payload.name + "Id"]: action.payload.value,
+        },
       };
+    case "SET_DATE":
+      const startDate = shamsiToGregorian(action.payload.startDate);
+      const endDate = shamsiToGregorian(action.payload.endDate);
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          startDate,
+          endDate,
+        },
+      };
+    case "INITIAL_QUERY":
+      return { ...state, query: action.payload };
   }
 };
 
-function FilterProvider({ children }) {
+function FilterProvider({ children, searchParams }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
+
+  useEffect(() => {
+    if (!searchParams) return;
+    dispatch({ type: "INITIAL_QUERY", payload: searchParams });
+  }, [searchParams]);
   return <FilterContext value={{ state, dispatch }}>{children}</FilterContext>;
 }
 

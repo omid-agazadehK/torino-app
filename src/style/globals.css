@@ -92,6 +92,43 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 52px !important;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.rmdp-arrow {
+  border-color: #00b3c7 !important;
+}
+.rmdp-arrow-container:hover{
+  background-color: #00b3c7 !important;
+}
+.rmdp-arrow-container:hover > .rmdp-arrow{
+  border-color: white !important;
+}
+
+.rmdp-range {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 4px;
+  background-color: #00b3c7 !important;
+}
+.sd {
+  font-size: 12px !important;
+}
+.sd:hover {
+  background-color: #00b3c7 !important;
+}
+.rmdp-today > span {
+  background-color: #ff7a59 !important;
+}
+.rmdp-week-day {
+  color: #00b3c7 !important;
+}
+
 .register-modal-animation {
   animation: dropIn 0.5s ease-out forwards;
 }

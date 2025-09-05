@@ -1,6 +1,6 @@
 export const cityHandler = (data, type) => {
   return data
-    .map((tour) => {
+    ?.map((tour) => {
       return tour[type];
     })
     .filter((item, index, self) => {
