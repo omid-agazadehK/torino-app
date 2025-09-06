@@ -1,4 +1,5 @@
 export const cityHandler = (data, type) => {
+  if (!data && !type) return;
   return data
     ?.map((tour) => {
       return tour[type];

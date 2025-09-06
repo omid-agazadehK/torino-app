@@ -34,7 +34,7 @@ function Icons({ className = "", name, onclick = null }) {
           />
         </svg>
       );
-    case "arrowLeft":
+    case "arrow-left":
       return (
         <svg
           viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ function Icons({ className = "", name, onclick = null }) {
           />
         </svg>
       );
-    case "volumeLow":
+    case "volume-low":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className}>
           <path
