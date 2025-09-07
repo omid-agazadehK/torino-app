@@ -19,3 +19,31 @@ export const DateObj = (gregDateStr) => {
 
   return new Date(gregDateStr);
 };
+diffDays;
+export function diffDays(dateStr1, dateStr2) {
+  const d1 = new Date(dateStr1);
+  const d2 = new Date(dateStr2);
+  const diffTime = d2 - d1;
+  return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+}
+export function getJalaliMonth(dateStr) {
+  const [gy, gm, gd] = dateStr.split("-").map(Number);
+  const { jm } = jalaali.toJalaali(gy, gm, gd);
+
+  const persianMonths = [
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند",
+  ];
+
+  return persianMonths[jm - 1];
+}

@@ -21,7 +21,7 @@ function CityFilterField({ type, icon, label }) {
       >
         <Icon name={icon} className="size-6 max-md:size-4.5" />
 
-        {state?.query[`${type}Id`] ? cityById?.name : label}
+        {cityById?.name || label}
       </button>
       {state?.dropDown[type] && <FilterDropDown name={type} title={label} />}
     </div>

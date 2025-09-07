@@ -11,7 +11,7 @@ export const serverFetch = async (
   if (query) url += `?${qs.stringify(query)}`;
   try {
     const response = await fetch(`${url}`, cache);
-    const json = await response.json();
+    const json = response.json();
     return json;
   } catch (error) {
     return false;

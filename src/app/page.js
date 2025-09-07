@@ -4,7 +4,7 @@ import ToursProvider from "@/core/context/ToursContext";
 import { serverFetch } from "@/core/services/https";
 
 export default async function Home({ searchParams }) {
-  const tours = await serverFetch("/tour", await searchParams, "no-store");
+  const tours = serverFetch("/tour", await searchParams, "no-store");
   const allTours = await serverFetch("/tour", "", "no-store");
   return (
     <ToursProvider tours={tours} allTours={allTours}>
