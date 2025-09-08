@@ -1,6 +1,5 @@
 "use client";
 import { ToursContext } from "@/core/context/ToursContext";
-
 import { Suspense, use } from "react";
 import TourSectionGrid from "./TourSectionGrid";
 import SkeletonCard from "../molecules/SkeletonCard";

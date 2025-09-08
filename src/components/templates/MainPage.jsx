@@ -1,3 +1,4 @@
+import BannerSection from "../organisms/BannerSection";
 import TourFilter from "../organisms/TourFilter";
 import ToursSection from "../organisms/ToursSection";
 import Welcome from "../organisms/Welcome";
@@ -8,6 +9,7 @@ export default function MainPage() {
       <Welcome />
       <TourFilter />
       <ToursSection />
+      <BannerSection/>
     </main>
   );
 }
