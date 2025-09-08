@@ -103,10 +103,10 @@ input[type="number"]::-webkit-outer-spin-button {
 .rmdp-arrow {
   border-color: #00b3c7 !important;
 }
-.rmdp-arrow-container:hover{
+.rmdp-arrow-container:hover {
   background-color: #00b3c7 !important;
 }
-.rmdp-arrow-container:hover > .rmdp-arrow{
+.rmdp-arrow-container:hover > .rmdp-arrow {
   border-color: white !important;
 }
 
@@ -169,15 +169,29 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: rotate(360deg);
   }
 }
-@media only screen and (max-width: 40rem) {
-  .otp-style {
-    width: 40px !important;
-    height: 40px !important;
-  }
-}
+
 @media only screen and (max-width: 40rem) {
   .otp-style {
     width: 35px !important;
     height: 35px !important;
   }
+  .swiper-wrapper {
+  width: 20rem !important;
+}
+}
+@media only screen and (max-width: 25rem) {
+  
+  .swiper-wrapper {
+  width: 15rem !important;
+}
+}
+
+.swiper-slide-shadow {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.swiper-button-disabled {
+  color: gray;
+  cursor: not-allowed;
 }
