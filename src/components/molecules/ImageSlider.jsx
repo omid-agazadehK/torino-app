@@ -38,7 +38,7 @@ function ImageSlider({ paginationRef }) {
         <SwiperSlide key={index}>
           <Image
             src={item.image}
-            width={400}
+            width={500}
             height={200}
             alt={item.title}
             className="xs:h-100 xs:w-80 h-70 w-50 rounded-2xl object-cover sm:h-120 sm:w-100"

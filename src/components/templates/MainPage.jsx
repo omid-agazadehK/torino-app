@@ -3,6 +3,7 @@ import WhyTorinoSection from "../organisms/WhyTorinoSection";
 import TourFilter from "../organisms/TourFilter";
 import ToursSection from "../organisms/ToursSection";
 import Welcome from "../organisms/Welcome";
+import BenefitsSection from "../organisms/BenefitsSection";
 
 export default function MainPage() {
   return (
@@ -12,6 +13,8 @@ export default function MainPage() {
       <ToursSection />
       <BannerSection />
       <WhyTorinoSection />
+
+      <BenefitsSection />
     </main>
   );
 }
