@@ -5,7 +5,7 @@ function TourCardFooter({ tour, expire }) {
   return (
     <div className="flex justify-between border-t border-black/12 p-2">
       <Link
-        href={expire ? "" : `/tours/${tour.id}`}
+        href={expire ? `/tours/${tour.id}` : `/tours/${tour.id}`}
         scroll={false}
         className={`${expire ? "cursor-not-allowed grayscale" : null} bg-primary hover:bg-secondary rounded-sm px-5 py-0.5 text-white transition-colors duration-200`}
       >

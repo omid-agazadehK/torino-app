@@ -13,7 +13,6 @@ export default function MainPage() {
       <ToursSection />
       <BannerSection />
       <WhyTorinoSection />
-
       <BenefitsSection />
     </main>
   );

@@ -28,4 +28,15 @@ const useLogin = () => {
     mutationFn,
   });
 };
-export { useRegister, useLogin };
+const useAddBasket = () => {
+  const mutationKey = ["basket"];
+  const mutationFn = (tourId) => {
+    return api.put(`/basket/${tourId}`);
+  };
+
+  return useMutation({
+    mutationKey,
+    mutationFn,
+  });
+};
+export { useRegister, useLogin, useAddBasket };

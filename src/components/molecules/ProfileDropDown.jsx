@@ -1,16 +1,17 @@
-import { setCookie } from "@/core/utils/cookies";
+
 import { useQueryClient } from "@tanstack/react-query";
 import Icon from "../atoms/Icon";
 import Link from "next/link";
-import { useRef } from "react";
+import { use, useRef } from "react";
 import useClickOutside from "@/core/hooks/useClickOutSide";
+import { AuthContext } from "@/core/context/AuthContext";
 
 function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
   const ref = useRef(null);
   const queryClient = useQueryClient();
+  const { logout } = use(AuthContext);
   function logoutHandler() {
-    setCookie("accessToken", "", 0);
-    setCookie("refreshToken", "", 0);
+    logout();
     queryClient.removeQueries("user");
     setIsProfileDropDown(false);
   }
@@ -18,7 +19,7 @@ function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
   return (
     <div
       ref={ref}
-      className="absolute top-full flex -right-2 h-fit w-40 flex-col overflow-hidden rounded-xl bg-white md:right-1/2 lg:w-62 md:translate-x-1/2"
+      className="absolute top-full -right-2 flex h-fit w-40 flex-col overflow-hidden rounded-xl bg-white md:right-1/2 md:translate-x-1/2 lg:w-62"
     >
       <div className="font-dana-medium bg-background flex items-center gap-x-2 overflow-hidden border-b border-b-black/12 px-3 py-2.5 max-lg:text-sm">
         <div className="rounded-full bg-gray-300 p-1.5">

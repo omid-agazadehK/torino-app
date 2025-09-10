@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from "react";
 import TourCard from "../molecules/TourCard";
-import Icon from "../atoms/Icon";
 import CollapseButton from "../molecules/CollapseButton";
 
 function TourSectionGrid({ tours: promise }) {

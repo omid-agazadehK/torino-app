@@ -22,9 +22,9 @@ function LoginOtpForm({ phoneNumber, setStep, setIsModal }) {
       { phoneNumber, otp },
       {
         onSuccess: (data) => {
-          setStep(null);
+          setStep(1);
           setIsModal(false);
-          setOtp(1);
+          setOtp("");
           setCookie("accessToken", data.accessToken, 30);
           setCookie("refreshToken", data.refreshToken, 30);
           queryClient.invalidateQueries("profile");

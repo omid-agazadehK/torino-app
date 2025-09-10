@@ -3,13 +3,16 @@ import TenStackReactQuery from "./TenStackReactQuery";
 import ModalProvider from "../context/ModalContext";
 import { ToastContainer } from "react-toastify";
 import SideBarProvider from "../context/SideBarContext";
+import AuthProvider from "../context/AuthContext";
 
 function Provider({ children }) {
   return (
     <TenStackReactQuery>
-      <SideBarProvider>
-        <ModalProvider>{children}</ModalProvider>
-      </SideBarProvider>
+      <AuthProvider>
+        <SideBarProvider>
+          <ModalProvider>{children}</ModalProvider>
+        </SideBarProvider>
+      </AuthProvider>
       <ToastContainer
         position="top-right"
         autoClose={5000}

@@ -1,4 +1,4 @@
-import jalaali from "jalaali-js";
+import jalaali,{toJalaali } from "jalaali-js";
 function faToEnNumbers(str) {
   return str.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
 }
@@ -46,4 +46,30 @@ export function getJalaliMonth(dateStr) {
   ];
 
   return persianMonths[jm - 1];
+}
+export function toJalaliString(dateString) {
+  const date = new Date(dateString);
+
+  const { jy, jm, jd } = toJalaali(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    date.getDate()
+  );
+
+  const months = [
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند",
+  ];
+
+  return `${jd} ${months[jm - 1]} ${jy}`;
 }

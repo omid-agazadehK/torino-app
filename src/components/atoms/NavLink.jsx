@@ -11,8 +11,8 @@ function NavLink({ route }) {
     <li>
       <Link
         href={route.href}
-        className={`hover:text-primary transition-colors duration-200 ${
-          isPath ? "text-primary" : null
+        className={`transition-colors duration-200 ${
+          isPath ? "text-primary" : "hover:text-secondary"
         }`}
       >
         {route.title}
