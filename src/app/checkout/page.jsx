@@ -1,7 +1,6 @@
+import Checkout from "@/components/templates/Checkout";
 import React from "react";
 
-function Checkout() {
-  return <div className="flex-1">Checkout</div>;
+export default function CheckoutPage() {
+  return <Checkout />;
 }
-
-export default Checkout;
