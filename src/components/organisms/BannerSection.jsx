@@ -23,7 +23,7 @@ export default function BannerSection() {
         <span className="font-dana-semiBold flex gap-x-2 text-xl text-black md:text-3xl">
           021-1840 <Icon name="call" className="size-5 fill-black md:size-6" />
         </span>
-        <button className="rounded-xl bg-[#015058] px-7 py-2.5 text-sm md:px-10 md:text-base">
+        <button className="rounded-xl bg-[#015058] px-7 py-2.5 text-sm md:px-10 md:text-base hover:bg-[#b24729]">
           اطلاعات بیشتر
         </button>
       </div>

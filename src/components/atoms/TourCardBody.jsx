@@ -9,7 +9,7 @@ function TourCardBody({ expire, tour }) {
   return (
     <div className="mt-2 space-y-2 p-2">
       <Link
-        href={expire ? "" : `/tours/${id}`}
+        href={expire ? "" : `/tours/${tour.id}`}
         scroll={false}
         className={`${expire ? "cursor-default" : null} text-dark block text-xl`}
       >

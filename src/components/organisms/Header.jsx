@@ -1,6 +1,5 @@
 import Image from "next/image";
 import NavBar from "../molecules/NavBar";
-
 import AccountControl from "./AccountControl";
 import HamburgerIcon from "../atoms/HamburgerIcon";
 

@@ -20,6 +20,7 @@ export const priceFormat = (number) => {
 // Use getInfoItems helper to generate infoItems array
 // This keeps JSX clean and handles any necessary formatting (like dates or insurance)
 export const getInfoItems = (tour) => {
+  if (!tour) return;
   const {
     origin,
     startDate,
