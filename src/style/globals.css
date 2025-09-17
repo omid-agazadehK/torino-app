@@ -32,7 +32,9 @@
   src: url(/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
   font-display: swap;
 }
-
+.mozia:hover {
+  width: calc(100% + 2rem);
+}
 @theme {
   /* colors */
   --color-primary: #00b3c7;
@@ -206,4 +208,24 @@ input[type="number"]::-webkit-outer-spin-button {
 .swiper-button-disabled {
   color: gray;
   cursor: not-allowed;
+}
+
+.card-image {
+  --s: 160px;
+  --b: 3px;
+  --g: 3px;
+  --c: #00b3c7;
+  outline: calc(var(--s) / 2) solid rgba(0, 0, 0, 0.329);
+  outline-offset: calc(var(--s) / -2);
+  border-radius: 12px 12px 0 0px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card-image:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: -3px;
+}
+
+.card-image + .card-image {
+  border-radius: 50%;
 }

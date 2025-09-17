@@ -7,14 +7,16 @@ function TourCard({ tour }) {
   const expire = new Date().getTime() > new Date(startDate).getTime();
 
   return (
-    <div className="lg:col-span-3 md:col-span-4 sm:col-span-6  col-span-12 md:max-w-70 max-w-90 w-full overflow-hidden rounded-xl border border-black/12">
-      <Image
-        src={image}
-        alt={title}
-        width={150}
-        height={150}
-        className="z-0 md:h-40 md:w-70 max-md:max-w-90 w-full h-full transition-all duration-200 hover:scale-110"
-      />
+    <div className="col-span-12 w-full max-w-90 overflow-hidden rounded-xl border border-black/12 sm:col-span-6 md:col-span-4 md:max-w-70 lg:col-span-3">
+      <div className="relative">
+        <Image
+          src={image}
+          alt={title}
+          width={150}
+          height={150}
+          className="h-full card-image w-full duration-200 max-md:max-w-90 md:h-40 md:w-70"
+        />
+      </div>
       <TourCardBody expire={expire} tour={tour} />
       <TourCardFooter expire={expire} tour={tour} />
     </div>

@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import checkoutSchema from "@/core/schema/checkout";
 
 export default function Checkout() {
-  const { data: basketData } = useGetBasket();
+  const { data: basketData, isPending } = useGetBasket();
   const { data: user } = useGetUserData();
   const {
     register,
@@ -18,11 +18,15 @@ export default function Checkout() {
   } = useForm({
     resolver: yupResolver(checkoutSchema),
   });
-  console.log(errors);
+  if (isPending) return <p>lodinggggasdasdasdasdasdasd</p>;
+  console.log(basketData);
   const submitHandler = (value) => {
     console.log(value);
   };
-  const tourDay = diffDays(basketData?.startDate, basketData?.endDate);
+  const tourDay = diffDays(
+    basketData.tourData?.startDate,
+    basketData.tourData?.endDate,
+  );
   return (
     <main className="container grid flex-1 grid-cols-24 gap-x-4">
       <form
@@ -94,7 +98,7 @@ export default function Checkout() {
         <div className="flex items-center justify-between">
           <span className="text-dark">قیمت نهایی</span>
           <span className="text-secondary font-dana-medium flex items-center gap-x-1 text-3xl">
-            {priceFormat(basketData?.price)}
+            {priceFormat(basketData.tourData?.price)}
             <p className="text-sm text-black">تومان</p>
           </span>
         </div>

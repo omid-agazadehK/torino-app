@@ -14,7 +14,7 @@ function CityFilterField({ type, icon, label }) {
     (tour) => tour.id === state?.query[`${type}Id`],
   );
   return (
-    <div className="relative flex-1">
+    <div className="relative flex-1 z-10">
       <button
         onClick={() => dispatch({ type: type.toUpperCase() })}
         className="hover:bg-primary/30 md:text-dark flex h-full w-full items-center justify-start gap-x-2 rounded-lg border-black/15 pr-1 text-black/50 max-md:justify-center max-md:rounded-xl max-md:border max-md:py-3.5"
