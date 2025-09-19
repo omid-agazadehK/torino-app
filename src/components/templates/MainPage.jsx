@@ -7,7 +7,7 @@ import BenefitsSection from "../organisms/BenefitsSection";
 
 export default function MainPage() {
   return (
-    <main className="mx-auto w-full max-w-360 flex-1">
+    <main className="mx-auto w-full max-w-360 flex-1 ">
       <Welcome />
       <TourFilter />
       <ToursSection />

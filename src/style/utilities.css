@@ -1,0 +1,23 @@
+@layer utilities {
+  .otp-style {
+    width: 52px !important;
+    height: 52px !important;
+  }
+  @media only screen and (max-width: 40rem) {
+    .otp-style {
+      width: 35px !important;
+      height: 35px !important;
+    }
+  }
+  .card-image {
+    outline: calc(160px / 2) solid rgba(0, 0, 0, 0.329);
+    outline-offset: calc(160px / -2);
+    border-radius: 12px 12px 0 0px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .card-image:hover {
+    outline: 3px solid #00b3c7;
+    outline-offset: -3px;
+  }
+}

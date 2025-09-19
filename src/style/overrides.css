@@ -1,0 +1,99 @@
+/* ===== Datepicker Overrides ===== */
+.rmdp-arrow {
+  border-color: #00b3c7 !important;
+}
+.rmdp-arrow-container:hover {
+  background-color: #00b3c7 !important;
+}
+.rmdp-arrow-container:hover > .rmdp-arrow {
+  border-color: white !important;
+}
+.rmdp-range {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 4px;
+  background-color: #00b3c7 !important;
+}
+.sd {
+  font-size: 12px !important;
+}
+.sd:hover {
+  background-color: #00b3c7 !important;
+}
+.rmdp-today > span {
+  background-color: #ff7a59 !important;
+}
+.rmdp-week-day {
+  color: #00b3c7 !important;
+}
+
+/* ===== Swiper Overrides ===== */
+
+@media only screen and (max-width: 40rem) {
+  .otp-style {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .swiper-wrapper {
+    width: 20rem !important;
+  }
+}
+@media only screen and (max-width: 25rem) {
+  .swiper-wrapper {
+    width: 15rem !important;
+  }
+}
+
+.swiper-slide-shadow {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.swiper-button-disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+/* ===== webkit Overrides ===== */
+/* Firefox */
+.scrollbar-custom {
+  scrollbar-width: thin; /* Firefox: thin / auto / none */
+  scrollbar-color: #00b3c7 transparent; /* thumb then track */
+}
+/* WebKit (Chrome, Edge, Safari) */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100%;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #00b3c7;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition:
+    filter 0.15s ease,
+    transform 0.12s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.92);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

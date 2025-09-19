@@ -1,0 +1,40 @@
+@layer base {
+  /* ===== Fonts Styles ===== */
+  /* font dana */
+  @font-face {
+    font-family: dana-regular;
+    src: url(/fonts/Dana/woff2/DanaFaNum-Regular.woff2) format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: dana-medium;
+    src: url(/fonts/Dana/woff2/DanaFaNum-Medium.woff2) format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: dana-semiBold;
+    src: url(/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
+    font-display: swap;
+  }
+  /* font morabba */
+  @font-face {
+    font-family: morabba-light;
+    src: url(/fonts/Morabba/woff2/Morabba-light.woff2) format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: morabba-medium;
+    src: url(/fonts/Morabba/woff2/Morabba-Medium.woff2) format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: morabba-bold;
+    src: url(/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
+    font-display: swap;
+  }
+  /* ===== Button base ===== */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

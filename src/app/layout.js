@@ -7,7 +7,7 @@ import SideBar from "@/components/templates/SideBar";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className="scrollbar-custom">
       <body className="font-dana-regular bg-background text-dark flex h-svh flex-col items-center justify-between">
         <Provider>
           <Header />
