@@ -11,7 +11,7 @@ export default function TourActions({ price }) {
   const { setStep, setIsModal } = use(ModalContext);
   const { tourId } = useParams();
   const { isLogin } = use(AuthContext);
-  const { mutate } = useAddBasket();
+  const { mutate, isPending } = useAddBasket();
 
   const linkHandler = () => {
     if (!isLogin) {
@@ -20,10 +20,7 @@ export default function TourActions({ price }) {
       return;
     }
     mutate(tourId, {
-      onSuccess: (data) => {
-        console.log(data)
-        router.push("/checkout")
-      },
+      onSuccess: () => router.push("/checkout"),
       onError: (err) => console.log(err),
     });
   };
@@ -35,7 +32,8 @@ export default function TourActions({ price }) {
       </span>
       <button
         onClick={() => linkHandler()}
-        className="bg-primary hover:bg-secondary xs:px-8 rounded-lg px-4 py-2.5 text-xl text-white transition-colors duration-200 lg:px-12 lg:text-2xl"
+        disabled={isPending}
+        className={`${isPending ? "cursor-not-allowed grayscale" : null} xs:px-8 bg-primary hover:bg-secondary rounded-lg px-4 py-2.5 text-xl text-white transition-colors duration-200 lg:px-12 lg:text-2xl`}
       >
         رزرو و خرید
       </button>

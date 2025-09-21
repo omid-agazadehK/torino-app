@@ -3,7 +3,6 @@ import TourDetailsSection from "@/components/organisms/TourDetails/TourDetailsSe
 import { Suspense } from "react";
 
 export default function TourDetailes({ tour }) {
-  console.log(tour);
   return (
     <main className="w-full flex-1 max-lg:px-7.5 lg:container">
       <Suspense fallback={<SkeletonTourDetails />}>

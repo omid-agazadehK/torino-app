@@ -7,7 +7,7 @@ export default function InfoItemsRow({ tour, className }) {
 
   return (
     <div className={className}>
-      {infoItems.map((item, index) => (
+      {infoItems?.map((item, index) => (
         <InfoItem key={index} item={item} />
       ))}
     </div>

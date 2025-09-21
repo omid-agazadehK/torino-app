@@ -28,7 +28,7 @@ function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
         <span>{phoneNumber}</span>
       </div>
       <Link
-        href="/dashboard"
+        href="/dashboard/profile"
         className="dropDown-border hover:bg-dark/3 text-dark relative flex gap-x-2 px-3 py-4.5 transition-colors max-lg:text-xs"
       >
         <Icon name="profile-1" className="size-4 md:size-5" />

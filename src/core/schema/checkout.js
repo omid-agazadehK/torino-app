@@ -1,4 +1,4 @@
-import { object, string } from "yup";
+import { object, string, date } from "yup";
 const checkoutSchema = object({
   fullName: string()
     .required("این فیلد الزامی است")
@@ -8,6 +8,8 @@ const checkoutSchema = object({
     .required("این فیلد الزامی است")
     .min(10, "کد ملی باید 10 رفم باشد")
     .max(10, "کد ملی باید 10 رفم باشد"),
+  birthDate: date().typeError("تاریخ معتبر نیست").required("تاریخ الزامی است"),
+  gender: string().required("لطفا یکی از گزینه ها رو انتخاب بفرمایید"),
 });
 
 export default checkoutSchema;

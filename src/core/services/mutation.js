@@ -39,4 +39,10 @@ const useAddBasket = () => {
     mutationFn,
   });
 };
-export { useRegister, useLogin, useAddBasket };
+
+const useCheckout = () => {
+  const mutationKey = ["checkout"];
+  const mutationFn = (userInfo) => api.post("/order", userInfo);
+  return useMutation({ mutationFn, mutationKey });
+};
+export { useRegister, useLogin, useAddBasket, useCheckout };

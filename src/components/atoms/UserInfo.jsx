@@ -3,7 +3,6 @@ import Icon from "./Icon";
 
 function UserInfo({ onClick, isProfileDropDown }) {
   const { data } = useGetUserData();
-  console.log(data);
   return (
     <div
       onClick={onClick}

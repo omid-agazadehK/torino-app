@@ -22,7 +22,7 @@ function SkeletonTourDetails() {
           </div>
           <div className="flex items-center justify-between">
             <div className="bg-skeleton h-10 w-30 rounded-xl bg-gray-300 lg:w-45"></div>
-            <button className="bg-skeleton h-14 w-30 rounded-xl bg-gray-300 lg:w-50"></button>
+            <div className="bg-skeleton h-14 w-30 rounded-xl bg-gray-300 lg:w-50"></div>
           </div>
         </div>
       </div>
