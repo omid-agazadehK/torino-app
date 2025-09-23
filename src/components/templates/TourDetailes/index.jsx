@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 export default function TourDetailes({ tour }) {
   return (
-    <main className="w-full flex-1 max-lg:px-7.5 lg:container">
+    <main className="w-full flex-1 max-lg:px-7.5 lg:container pt-16 md:pt-20">
       <Suspense fallback={<SkeletonTourDetails />}>
         <TourDetailsSection tour={tour} />
       </Suspense>

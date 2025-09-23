@@ -1,4 +1,3 @@
-
 import { useQueryClient } from "@tanstack/react-query";
 import Icon from "../atoms/Icon";
 import Link from "next/link";
@@ -29,6 +28,7 @@ function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
       </div>
       <Link
         href="/dashboard/profile"
+        onClick={() => setIsProfileDropDown(false)}
         className="dropDown-border hover:bg-dark/3 text-dark relative flex gap-x-2 px-3 py-4.5 transition-colors max-lg:text-xs"
       >
         <Icon name="profile-1" className="size-4 md:size-5" />
