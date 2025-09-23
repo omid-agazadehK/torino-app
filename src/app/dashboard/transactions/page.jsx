@@ -1,9 +1,5 @@
-import React from 'react'
+import TransactionsPage from "@/components/templates/dashboard/TransactionsPage";
 
-function Transactions() {
-  return (
-    <div>Transactions</div>
-  )
+export default function Transactions() {
+  return <TransactionsPage />;
 }
-
-export default Transactions

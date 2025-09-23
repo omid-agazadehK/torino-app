@@ -25,18 +25,18 @@ api.interceptors.response.use(
     return res.data;
   },
   async (err) => {
-    // const orginalRequest = err.config;
-    // if ((err.status === 401 || err.status === 403) && !orginalRequest._retry) {
-    //   orginalRequest._retry = true;
-    //   const newAccessToken = await getNewToken();
-    //   if (newAccessToken?.status === 200) {
-    //     setCookie("accessToken", newAccessToken?.data?.accessToken, 30);
-    //     return api(orginalRequest);
-    //   } else {
-    //     setCookie("accessToken", "", 0);
-    //     setCookie("refreshToken", "", 0);
-    //   }
-    // }
+    const orginalRequest = err.config;
+    if ((err.status === 401 || err.status === 403) && !orginalRequest._retry) {
+      orginalRequest._retry = true;
+      const newAccessToken = await getNewToken();
+      if (newAccessToken?.status === 200) {
+        setCookie("accessToken", newAccessToken?.data?.accessToken, 30);
+        return api(orginalRequest);
+      } else {
+        setCookie("accessToken", "", 0);
+        setCookie("refreshToken", "", 0);
+      }
+    }
     return Promise.reject(err);
   },
 );

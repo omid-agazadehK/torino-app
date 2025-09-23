@@ -1,4 +1,4 @@
-import jalaali,{toJalaali } from "jalaali-js";
+import jalaali, { toJalaali } from "jalaali-js";
 function faToEnNumbers(str) {
   return str.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
 }
@@ -19,7 +19,6 @@ export const DateObj = (gregDateStr) => {
 
   return new Date(gregDateStr);
 };
-diffDays;
 export function diffDays(dateStr1, dateStr2) {
   const d1 = new Date(dateStr1);
   const d2 = new Date(dateStr2);
@@ -53,7 +52,7 @@ export function toJalaliString(dateString) {
   const { jy, jm, jd } = toJalaali(
     date.getFullYear(),
     date.getMonth() + 1,
-    date.getDate()
+    date.getDate(),
   );
 
   const months = [
@@ -72,4 +71,23 @@ export function toJalaliString(dateString) {
   ];
 
   return `${jd} ${months[jm - 1]} ${jy}`;
+}
+export function formatJalaliWithTime(isoDateStr) {
+  if (!isoDateStr) return null;
+
+  const date = new Date(isoDateStr);
+
+  const { jy, jm, jd } = toJalaali(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    date.getDate(),
+  );
+
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+
+  // فرمت نهایی
+  return `${jy}/${jm.toString().padStart(2, "0")}/${jd
+    .toString()
+    .padStart(2, "0")} - ${hours}:${minutes}`;
 }

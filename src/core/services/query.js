@@ -13,6 +13,14 @@ const useGetBasket = () => {
   const url = "/basket";
   const queryKey = ["basket"];
   const queryFn = () => api.get(url);
+
   return useQuery({ queryKey, queryFn });
 };
-export { useGetUserData, useGetBasket };
+const useGetTransaction = () => {
+  const url = "/user/transactions";
+  const queryKey = ["transactions"];
+  const queryFn = () => api.get(url);
+
+  return useQuery({ queryKey, queryFn });
+};
+export { useGetUserData, useGetBasket, useGetTransaction };
