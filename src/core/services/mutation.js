@@ -45,4 +45,9 @@ const useCheckout = () => {
   const mutationFn = (userInfo) => api.post("/order", userInfo);
   return useMutation({ mutationFn, mutationKey });
 };
-export { useRegister, useLogin, useAddBasket, useCheckout };
+const useUpdateUser = () => {
+  const mutationKey = ["user"];
+  const mutationFn = (userInfo) => api.put("/user/profile", userInfo);
+  return useMutation({ mutationKey, mutationFn });
+};
+export { useRegister, useLogin, useAddBasket, useCheckout, useUpdateUser };

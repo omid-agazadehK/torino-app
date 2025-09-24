@@ -468,6 +468,36 @@ function Icons({ className = "", name, onclick = null }) {
           />
         </svg>
       );
+    case "line":
+      return (
+        <svg
+          width="13"
+          height="1"
+          viewBox="0 0 13 1"
+          fill="none"
+          className={className}
+        >
+          <line
+            x1="13"
+            y1="0.5"
+            x2="-8.3449e-08"
+            y2="0.499998"
+            stroke="currentcolor"
+          />
+        </svg>
+      );
+    case "edit":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className}>
+          <path
+            d="M12 20H20.5M18 10L21 7L17 3L14 6M18 10L8 20H4V16L14 6M18 10L14 6"
+            stroke="currentcolor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
   }
 }
 
