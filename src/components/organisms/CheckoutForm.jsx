@@ -6,11 +6,9 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import Icon from "../atoms/Icon";
 import { yupResolver } from "@hookform/resolvers/yup";
 import checkoutSchema from "@/core/schema/checkout";
-import { useGetUserData } from "@/core/services/query";
 import { objDateToCa } from "@/core/utils/helper";
 import { useRouter } from "next/navigation";
 export default function CheckoutForm({ mutate }) {
-  const { data: user } = useGetUserData();
   const router = useRouter();
   const {
     register,

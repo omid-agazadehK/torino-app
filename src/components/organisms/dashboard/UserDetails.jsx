@@ -13,10 +13,10 @@ export default function UserDetails({ formStatus, setFormStatus }) {
         <span className="w-full max-w-25 max-sm:text-sm">شماره موبایل</span>
         <span>{userData?.mobile || <Icon name={"line"} />}</span>
       </div>
-      {!formStatus.userDataForm && (
+      {!formStatus.accountForm && (
         <AccountDetails setFormStatus={setFormStatus} />
       )}
-      {formStatus.userDataForm && (
+      {formStatus.accountForm && (
         <AccountDetailsForm setFormStatus={setFormStatus} />
       )}
     </div>

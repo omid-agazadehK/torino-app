@@ -91,3 +91,20 @@ export function formatJalaliWithTime(isoDateStr) {
     .toString()
     .padStart(2, "0")} - ${hours}:${minutes}`;
 }
+
+export function toJalaliDate(isoDateStr) {
+  if (!isoDateStr) return null;
+
+  const date = new Date(isoDateStr);
+
+  const { jy, jm, jd } = toJalaali(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    date.getDate(),
+  );
+
+  // خروجی در فرمت yyyy/mm/dd
+  return `${jy}/${jm.toString().padStart(2, "0")}/${jd
+    .toString()
+    .padStart(2, "0")}`;
+}

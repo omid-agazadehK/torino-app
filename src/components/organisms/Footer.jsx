@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="grid w-full grid-cols-12 border-y border-y-black/20 px-7 py-5 lg:container lg:px-0">
+    <footer className="grid w-full grid-cols-12 border-y border-y-black/20 px-7 pb-2 lg:container lg:px-0">
       <div className="col-span-12 flex items-center justify-between text-right md:col-span-5 lg:col-span-4">
         <nav>
           <h5 className="font-dana-semiBold mb-4 text-2xl">تورینو</h5>
@@ -38,28 +38,28 @@ function Footer() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 md:gap-x-7">
           <Image
-            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-17.5 lg:w-17"
+            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-15 lg:w-15"
             src="/images/state-airline.png"
             width={68}
             height={70}
             alt="state-airline icon"
           />
           <Image
-            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-17.5 lg:w-17"
+            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-15 lg:w-15"
             src="/images/passenger-rights.png"
             width={68}
             height={70}
             alt="passeger-rights icon"
           />
           <Image
-            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-17.5 lg:w-17"
+            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-15 lg:w-15"
             src="/images/ecunion.png"
             width={68}
             height={70}
             alt="ecunion icon"
           />
           <Image
-            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-17.5 lg:w-17"
+            className="h-10 w-9 sm:h-14 sm:w-14 lg:h-15 lg:w-15"
             src="/images/samandehi.png"
             width={68}
             height={70}

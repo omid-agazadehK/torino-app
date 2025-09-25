@@ -16,12 +16,12 @@ export default function AccountDetails({ setFormStatus }) {
       </div>
       <button
         onClick={() =>
-          setFormStatus((prev) => ({ ...prev, userDataForm: true }))
+          setFormStatus((prev) => ({ ...prev, accountForm: true }))
         }
-        className="text-secondary flex gap-x-2 text-sm transition-colors duration-200 hover:text-orange-500"
+        className="text-secondary flex gap-x-2 sm:text-sm text-xs transition-colors duration-200 hover:text-orange-500"
       >
+        <Icon name={"edit"} className="sm:size-5 size-4" />
         افزودن
-        <Icon name={"edit"} className="size-5" />
       </button>
     </div>
   );

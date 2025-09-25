@@ -1,4 +1,4 @@
-import { object, string, date } from "yup";
+import { object, string } from "yup";
 const userAccountDetails = object({
   email: string()
     .test(

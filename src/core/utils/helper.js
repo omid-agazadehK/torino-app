@@ -16,9 +16,9 @@ export const cityHandler = (data, type) => {
 export const priceFormat = (number) => {
   return new Intl.NumberFormat("en-US").format(number);
 };
-export const objDateToCa=(date)=>{
- return new Intl.DateTimeFormat('en-CA').format(date)
-}
+export const objDateToCa = (date) => {
+  return new Intl.DateTimeFormat("en-CA").format(date);
+};
 // Use getInfoItems helper to generate infoItems array
 // This keeps JSX clean and handles any necessary formatting (like dates or insurance)
 export const getInfoItems = (tour) => {
@@ -69,4 +69,10 @@ export const getInfoItems = (tour) => {
       formatter: (v) => (v ? "دارد" : "ندارد"),
     },
   ];
+};
+
+export const cleanObject = (obj) => {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([_, v]) => v !== "" && v != null),
+  );
 };

@@ -21,13 +21,13 @@ export default function AccountDetailsForm({ setFormStatus }) {
     !data.email || data.email === userData?.email;
   const submitHandler = (data) => {
     if (shouldSkipUpdate(data)) {
-      setFormStatus((prev) => ({ ...prev, userDataForm: false }));
+      setFormStatus((prev) => ({ ...prev, accountForm: false }));
       reset();
       return;
     }
     mutate(data, {
       onSuccess: (data) => {
-        setFormStatus((prev) => ({ ...prev, userDataForm: false }));
+        setFormStatus((prev) => ({ ...prev, accountForm: false }));
         toast.success(data.message);
       },
       onError: (err) => console.log(err),

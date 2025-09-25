@@ -9,7 +9,7 @@ function UserInfo({ onClick, isProfileDropDown }) {
       className="text-primary hover:text-secondary flex cursor-pointer items-center justify-center gap-x-1 transition-colors duration-200"
     >
       <Icon name="profile" className="size-3.5 sm:size-6" />
-      <span className="text-sm sm:text-lg">{data.fullName || data.mobile}</span>
+      <span className="text-sm sm:text-lg max-w-40 truncate" title={data.fullName || data.mobile}>{data.fullName || data.mobile}</span>
       <Icon
         name="arrow-down"
         className={`${!isProfileDropDown ? "-rotate-90" : "rotate-0"} size-4 transition-all sm:size-6`}
