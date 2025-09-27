@@ -108,3 +108,38 @@ export function toJalaliDate(isoDateStr) {
     .toString()
     .padStart(2, "0")}`;
 }
+
+export function formatToPersianDate(isoDate) {
+  const date = new Date(isoDate);
+
+  const j = toJalaali(date);
+
+  const weekdays = [
+    "یکشنبه",
+    "دوشنبه",
+    "سه‌شنبه",
+    "چهارشنبه",
+    "پنج‌شنبه",
+    "جمعه",
+    "شنبه",
+  ];
+  const dayName = weekdays[date.getDay()];
+
+  const months = [
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفند",
+  ];
+  const monthName = months[j.jm - 1];
+
+  return `${dayName} ${j.jd} ${monthName} ${j.jy}`;
+}

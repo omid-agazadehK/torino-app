@@ -5,7 +5,6 @@ import CollapseButton from "../molecules/CollapseButton";
 function TourSectionGrid({ tours: promise }) {
   const data = use(promise);
   const [isCollapsed, setIsCollapsed] = useState(false);
-
   const dataSplice = isCollapsed ? data.slice(0, 4) : data;
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 640px)");
