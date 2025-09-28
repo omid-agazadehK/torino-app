@@ -1,8 +1,6 @@
-import React from "react";
-
-function SkeletonTourDetails() {
+export default function Loading() {
   return (
-    <div className="my-9 w-full rounded-xl border-black/20 md:border md:bg-white md:px-6 md:py-7">
+    <div className="lg:container my-9 w-full rounded-xl border-black/20 md:border md:bg-white md:px-6 md:py-7">
       <div className="flex w-full flex-col gap-y-4 md:flex-row md:gap-x-2">
         <div className="bg-skeleton h-65 shrink-0 rounded-xl bg-gray-300 md:w-80 lg:w-100"></div>
         <div className="flex w-full flex-col gap-y-10">
@@ -37,5 +35,3 @@ function SkeletonTourDetails() {
     </div>
   );
 }
-
-export default SkeletonTourDetails;

@@ -1,9 +1,9 @@
 /* ===== Datepicker Overrides ===== */
 .rmdp-arrow {
-  border-color: #00b3c7 !important;
+  border-color: var(--primary) !important;
 }
 .rmdp-arrow-container:hover {
-  background-color: #00b3c7 !important;
+  background-color: var(--primary) !important;
 }
 .rmdp-arrow-container:hover > .rmdp-arrow {
   border-color: white !important;
@@ -12,28 +12,24 @@
   height: 25px !important;
   width: 25px !important;
   border-radius: 4px;
-  background-color: #00b3c7 !important;
+  background-color: var(--primary) !important;
 }
 .sd {
   font-size: 12px !important;
 }
 .sd:hover {
-  background-color: #00b3c7 !important;
+  background-color: var(--primary) !important;
 }
 .rmdp-today > span {
-  background-color: #ff7a59 !important;
+  background-color: var(--secondary) !important;
 }
 .rmdp-week-day {
-  color: #00b3c7 !important;
+  color: var(--primary) !important;
 }
 
 /* ===== Swiper Overrides ===== */
 
 @media only screen and (max-width: 40rem) {
-  .otp-style {
-    width: 35px !important;
-    height: 35px !important;
-  }
   .swiper-wrapper {
     width: 20rem !important;
   }
@@ -57,7 +53,7 @@
 /* Firefox */
 .scrollbar-custom {
   scrollbar-width: thin; /* Firefox: thin / auto / none */
-  scrollbar-color: #00b3c7 transparent; /* thumb then track */
+  scrollbar-color: var(--primary) transparent; /* thumb then track */
 }
 /* WebKit (Chrome, Edge, Safari) */
 .scrollbar-custom::-webkit-scrollbar {
@@ -71,7 +67,7 @@
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb {
-  background: #00b3c7;
+  background: var(--primary);
   border-radius: 100%;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -96,4 +92,32 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+/* ===== OTP Overrides ===== */
+.otp-style {
+  width: 52px !important;
+  height: 52px !important;
+}
+@media only screen and (max-width: 40rem) {
+  .otp-style {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+/* ===== Toastify Overrides ===== */
+.Toastify__progress-bar--success {
+  background: var(--primary) !important;
+}
+
+.Toastify__toast--success > .Toastify--animate-icon > svg {
+  fill: var(--primary) !important;
+}
+@media (max-width: 48rem) {
+  .Toastify__toast {
+    max-width: 80% !important; /* به جای پر کردن صفحه */
+    margin: 0 auto; /* وسط چین */
+    margin-top: 1rem;
+    font-size: 13px;
+    padding: 10px;
+  }
 }

@@ -18,6 +18,8 @@ function Provider({ children }) {
         autoClose={5000}
         pauseOnHover={true}
         draggable={true}
+        rtl={false}
+        pauseOnFocusLoss
       />
     </TenStackReactQuery>
   );

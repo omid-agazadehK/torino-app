@@ -18,7 +18,7 @@ function TourCardBody({ expire, tour }) {
       <p
         className={`${expire ? "text-red-500" : "text-dark/70"} truncate text-sm`}
       >
-        {expire ? "محلت رزرو به اتمام رسیده" : features}
+        {expire ? "مهلت رزرو به اتمام رسیده" : features}
       </p>
     </div>
   );

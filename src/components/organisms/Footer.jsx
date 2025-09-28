@@ -27,7 +27,7 @@ function Footer() {
         <div className="flex flex-col items-end gap-y-5 text-black">
           <Image
             className="h-auto w-auto max-md:h-6.5 max-md:w-25"
-            src="/images/torino-icon.png"
+            src="/images/torino-icon.webp"
             width={146}
             height={44}
             alt="torino icon"

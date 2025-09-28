@@ -36,7 +36,7 @@ function AccountControl() {
       )}
       {isProfileDropDown && (
         <ProfileDropDown
-          phoneNumber={data?.mobile}
+          userTag={data?.fullName||data?.mobile}
           setIsProfileDropDown={setIsProfileDropDown}
         />
       )}

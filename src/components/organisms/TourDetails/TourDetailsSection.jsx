@@ -22,7 +22,7 @@ export default function TourDetailsSection({ tour }) {
           className="h-55 w-88 rounded-xl sm:h-66 sm:w-100 md:min-w-100"
         />
         <div className="flex w-full flex-col space-y-6">
-          <DetailsHeader tourDay={tourDay} />
+          <DetailsHeader tourDay={tourDay} title={title} />
           <TourHighlights />
           {/* Mobile info items */}
           <InfoItemsRow

@@ -5,7 +5,7 @@ import { use, useRef } from "react";
 import useClickOutside from "@/core/hooks/useClickOutSide";
 import { AuthContext } from "@/core/context/AuthContext";
 
-function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
+function ProfileDropDown({ userTag, setIsProfileDropDown }) {
   const ref = useRef(null);
   const queryClient = useQueryClient();
   const { logout } = use(AuthContext);
@@ -24,7 +24,9 @@ function ProfileDropDown({ phoneNumber, setIsProfileDropDown }) {
         <div className="rounded-full bg-gray-300 p-1.5">
           <Icon name="profile" className="size-4 text-gray-600" />
         </div>
-        <span>{phoneNumber}</span>
+        <span className="max-w-30 truncate lg:max-w-45" title={userTag}>
+          {userTag}
+        </span>
       </div>
       <Link
         href="/dashboard/profile"

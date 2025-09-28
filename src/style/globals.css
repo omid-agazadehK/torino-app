@@ -5,11 +5,15 @@
 @import "./utilities.css";
 @import "./overrides.css";
 @import "./animations.css";
+:root {
+  --primary: #00b3c7;
+  --secondary: #ff7a59;
+}
 
 @theme {
   /* colors */
-  --color-primary: #00b3c7;
-  --color-secondary: #ff7a59;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-background: #f5f5f5;
   --color-dark: #282828;
   --color-muted: #555555;
