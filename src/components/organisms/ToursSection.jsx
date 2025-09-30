@@ -1,9 +1,8 @@
 "use client";
 import { ToursContext } from "@/core/context/ToursContext";
-import { Suspense, use, useEffect } from "react";
+import { Suspense, use } from "react";
 import TourSectionGrid from "./TourSectionGrid";
 import SkeletonCard from "../molecules/SkeletonCard";
-import api from "@/core/config/axios";
 
 function ToursSection() {
   const { tours } = use(ToursContext);

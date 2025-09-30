@@ -4,14 +4,13 @@ import { use } from "react";
 import FilterDropDown from "./FilterDropDown";
 import { FilterContext } from "@/core/context/FilterContext";
 import Icon from "../atoms/Icon";
-import { ToursContext } from "@/core/context/ToursContext";
 import { cityHandler } from "@/core/utils/helper";
 
-function CityFilterField({ type, icon, label }) {
+function CityFilterField({ type, icon, label, allToursPromise }) {
   const { state, dispatch } = use(FilterContext);
-  const { allTours } = use(ToursContext);
-  if (!allTours) return null;
-  const cityById = cityHandler(allTours, type).find(
+  const tours = use(allToursPromise);
+  if (!tours) return null;
+  const cityById = cityHandler(tours, type).find(
     (tour) => tour.id === state?.query[`${type}Id`],
   );
   return (
@@ -24,7 +23,9 @@ function CityFilterField({ type, icon, label }) {
 
         {cityById?.name || label}
       </button>
-      {state?.dropDown[type] && <FilterDropDown name={type} title={label} />}
+      {state?.dropDown[type] && (
+        <FilterDropDown tours={tours} name={type} title={label} />
+      )}
     </div>
   );
 }
