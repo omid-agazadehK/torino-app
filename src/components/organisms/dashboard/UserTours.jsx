@@ -3,7 +3,16 @@ import { formatToPersianDate } from "@/core/utils/date";
 import { priceFormat } from "@/core/utils/helper";
 
 export default function UserTours({ tour }) {
-  const { title, fleetVehicle, price, id, startDate, endDate } = tour;
+  const {
+    title,
+    fleetVehicle,
+    price,
+    id,
+    startDate,
+    endDate,
+    origin,
+    destination,
+  } = tour;
   const fleetVehicleIcon = () => {
     switch (fleetVehicle) {
       case "SUV":
@@ -33,7 +42,7 @@ export default function UserTours({ tour }) {
       </div>
       <div className="grid grid-cols-12">
         <div className="col-span-5">
-          <span className="font-dana-semiBold">تهران به سلیمانیه </span>
+          <span className="font-dana-semiBold">{`${origin?.name} به ${destination?.name} `}</span>
           <span>{formatToPersianDate(startDate)}</span>
         </div>
         <div className="col-span-7">

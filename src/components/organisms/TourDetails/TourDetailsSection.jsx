@@ -19,6 +19,7 @@ export default function TourDetailsSection({ tour }) {
           alt={title}
           width={500}
           height={200}
+          priority
           className="h-55 w-88 rounded-xl sm:h-66 sm:w-100 md:min-w-100"
         />
         <div className="flex w-full flex-col space-y-6">
@@ -27,7 +28,7 @@ export default function TourDetailsSection({ tour }) {
           {/* Mobile info items */}
           <InfoItemsRow
             tour={tour}
-            className=" mt-10 flex gap-x-10 pb-4 divide-black/25 overflow-x-scroll text-lg text-black md:hidden"
+            className="mt-10 flex gap-x-10 divide-black/25 overflow-x-scroll pb-4 text-lg text-black md:hidden"
           />
           <TourActions price={price} />
         </div>

@@ -8,7 +8,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import checkoutSchema from "@/core/schema/checkout";
 import { objDateToCa } from "@/core/utils/helper";
 import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 export default function CheckoutForm({ mutate }) {
+  const queryClient = useQueryClient();
   const router = useRouter();
   const {
     register,
@@ -21,7 +24,10 @@ export default function CheckoutForm({ mutate }) {
   const submitHandler = (value) => {
     const userInfo = { ...value, birthDate: objDateToCa(value.birthDate) };
     mutate(userInfo, {
-      onSuccess: (data) => {
+      onSuccess: async (res) => {
+        await queryClient.refetchQueries({ queryKey: ["bookedTours"] });
+        console.log(res)
+        toast.success(res.message)
         router.replace(`/checkout/result?status=success`);
       },
       onError: (err) => console.log(err),
