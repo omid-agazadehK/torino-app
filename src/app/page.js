@@ -4,14 +4,15 @@ import ToursProvider from "@/core/context/ToursContext";
 import { serverFetch } from "@/core/services/https";
 export const metadata = {
   title: "برگزارد کننده تورهای تورینو ",
-  description: "salam bamaram",
+  description:
+    "رزرو آنلاین تور تورینو با بهترین قیمت و خدمات کامل؛ تجربه‌ای متفاوت از سفر همراه با راهنمای فارسی‌زبان.",
 };
 
 export default async function Home({ searchParams }) {
   const tours = serverFetch("/tour", await searchParams, "no-store");
-  const allTours = await serverFetch("/tour", "", "no-store");
+  const allToursPromise =  serverFetch("/tour", "", "no-store");
   return (
-    <ToursProvider tours={tours} allTours={allTours}>
+    <ToursProvider tours={tours} allToursPromise={allToursPromise}>
       <FilterProvider searchParams={await searchParams}>
         <MainPage />
       </FilterProvider>
