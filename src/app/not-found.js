@@ -2,12 +2,15 @@ import Link from "next/link";
 
 export default function Error() {
   return (
-    <main className="font-dana-semiBold flex w-full flex-1 flex-col-reverse items-center justify-end px-7 py-2 md:flex-row md:justify-center md:gap-x-10">
+    <main className="font-dana-semiBold mt-4 flex w-full flex-1 flex-col-reverse items-center justify-end px-7 py-2 md:flex-row md:justify-center md:gap-x-10">
       <div className="flex flex-col items-center gap-y-3 md:gap-y-10">
         <h2 className="text-dark text-2xl lg:text-4xl">
           صفحه مورد نظر یافت نشد!
         </h2>
-        <Link href={"/"} className="bg-primary/30 hover:bg-primary/40 text-primary rounded-2xl px-5 py-2 text-xl transition-colors duration-200 md:py-4 lg:px-11 lg:text-2xl">
+        <Link
+          href={"/"}
+          className="bg-primary/30 hover:bg-primary/40 text-primary rounded-2xl px-5 py-2 text-xl transition-colors duration-200 md:py-4 lg:px-11 lg:text-2xl"
+        >
           بازگشت به صفحه اصلی
         </Link>
       </div>

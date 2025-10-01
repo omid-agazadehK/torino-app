@@ -143,3 +143,16 @@ export function formatToPersianDate(isoDate) {
 
   return `${dayName} ${j.jd} ${monthName} ${j.jy}`;
 }
+export function getStatus(startDateStr, endDateStr) {
+  const now = new Date();
+  const startDate = new Date(startDateStr);
+  const endDate = new Date(endDateStr);
+
+  if (now < startDate) {
+    return { status: "not_started", message: "مانده تا شروع" };
+  } else if (now >= startDate && now <= endDate) {
+    return { status: "running", message: "در حال اجرا" };
+  } else {
+    return { status: "done", message: "به اتمام رسیده" };
+  }
+}
