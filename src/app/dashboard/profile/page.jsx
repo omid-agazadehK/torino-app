@@ -1,4 +1,4 @@
-import ProfilePage from "@/components/templates/dashboard/ProfilePage";
+import ProfilePage from "@/components/templates/dashboard/profile/ProfilePage";
 export const metadata = {
   title: "پروفایل | تورهای من",
   robots: { index: false, follow: false },

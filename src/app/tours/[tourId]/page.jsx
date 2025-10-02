@@ -1,4 +1,4 @@
-import TourDetailes from "@/components/templates/TourDetailes";
+import TourDetailes from "@/components/templates/TourDetails";
 import { serverFetch } from "@/core/services/https";
 import { diffDays, toJalaliString } from "@/core/utils/date";
 export async function generateMetadata(props) {

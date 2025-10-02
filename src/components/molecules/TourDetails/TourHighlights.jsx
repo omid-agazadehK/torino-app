@@ -1,8 +1,8 @@
-import Icon from "../../atoms/Icon";
+import Icon from "../../shared/Icon";
 
 export default function TourHighlights() {
   return (
-    <div className="flex max-md:justify-between text-sm text-gray-500 *:flex *:items-center *:gap-x-2 sm:text-base sm:*:px-2 md:text-sm md:*:gap-x-0.5 lg:gap-x-6 lg:text-xl lg:*:gap-x-2">
+    <div className="flex text-sm text-gray-500 *:flex *:items-center *:gap-x-2 max-md:justify-between sm:text-base sm:*:px-2 md:text-sm md:*:gap-x-0.5 lg:gap-x-6 lg:text-xl lg:*:gap-x-2">
       <span>
         <Icon name="user-tick" className="size-3 sm:size-4 lg:size-6" />
         تورلیدر از مبدا

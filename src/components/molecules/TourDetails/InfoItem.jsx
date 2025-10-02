@@ -1,4 +1,4 @@
-import Icon from "../../atoms/Icon";
+import Icon from "../../shared/Icon";
 
 function InfoItem({ item }) {
   const { label, icon, value, formatter } = item;

@@ -6,7 +6,6 @@ export default async function OrderResult({ searchParams, ...rest }) {
   if (!order.status) {
     redirect("/");
   }
-  console.log(order);
   return (
     <main className="text-primary font-morabba-medium mt-10 flex flex-1 flex-col items-center justify-center gap-y-10 pt-16 md:pt-20">
       <span

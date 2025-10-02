@@ -1,4 +1,4 @@
-import MainPage from "@/components/templates/MainPage";
+import MainPage from "@/components/templates/mainPage/MainPage";
 import FilterProvider from "@/core/context/FilterContext";
 import ToursProvider from "@/core/context/ToursContext";
 import { serverFetch } from "@/core/services/https";
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function Home({ searchParams }) {
   const tours = serverFetch("/tour", await searchParams, "no-store");
-  const allToursPromise =  serverFetch("/tour", "", "no-store");
+  const allToursPromise = serverFetch("/tour", "", "no-store");
   return (
     <ToursProvider tours={tours} allToursPromise={allToursPromise}>
       <FilterProvider searchParams={await searchParams}>

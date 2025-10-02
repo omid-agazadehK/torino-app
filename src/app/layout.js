@@ -1,9 +1,9 @@
-import Footer from "@/components/organisms/Footer";
+import Footer from "@/components/organisms/layout/Footer";
 import "../style/globals.css";
-import Header from "@/components/organisms/Header";
-import AuthModals from "@/components/templates/AuthModals";
+import Header from "@/components/organisms/layout/Header";
+import AuthModals from "@/components/templates/layout/AuthModals";
 import Provider from "@/core/providers/Provider";
-import SideBar from "@/components/templates/SideBar";
+import SideBar from "@/components/templates/layout/SideBar";
 
 export default function RootLayout({ children }) {
   return (
