@@ -11,12 +11,12 @@ export default async function sitemap() {
     },
   ];
 
-  const dynamicRoutes = tours.map((t) => ({
-    url: `https://example.com/tour/${t.id}`,
-    lastModified: new Date(t.updatedAt),
-    changeFrequency: "weekly",
-    priority: 0.9,
-  }));
+  // const dynamicRoutes = tours.map((t) => ({
+  //   url: `https://example.com/tour/${t.id}`,
+  //   lastModified: new Date(t.updatedAt),
+  //   changeFrequency: "weekly",
+  //   priority: 0.9,
+  // }));
 
-  return [...staticRoutes, ...dynamicRoutes];
+  return [...staticRoutes];
 }
