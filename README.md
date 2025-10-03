@@ -46,8 +46,8 @@ Users can explore tours, filter by preferences, add them to the cart, complete c
 
 ## 🚀 Deployment
 
-This project Will be deployed on Vercel [Vercel](https://vercel.com/).  
-You can access the live site here: [https://torino-app.vercel.app](https://torino-app.vercel.app)
+This project deployed on Vercel [Vercel](https://vercel.com/).  
+You can access the live site here: [https://torino-app-two.vercel.app/](https://torino-app-two.vercel.app/)
 
 ## 🏁 Getting Started
 
