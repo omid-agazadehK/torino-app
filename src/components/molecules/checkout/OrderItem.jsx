@@ -5,7 +5,7 @@ export default function OrderItem({ tourData, isCheckout }) {
   const tourDay = diffDays(tourData?.startDate, tourData?.endDate);
 
   return (
-    <div className="bg-header col-span-20 md:mt-9 mt-5 h-fit space-y-6.5 rounded-lg border border-black/20 p-3 md:col-span-7 lg:col-span-6 max-md:mb-5">
+    <div className="bg-header col-span-20 mt-5 h-fit space-y-6.5 rounded-lg border border-black/20 p-3 max-md:mb-5 md:col-span-7 md:mt-9 lg:col-span-6">
       <div className="flex items-center justify-between border-b border-black/20 pt-1 pb-6">
         <span className="font-dana-semiBold text-xl whitespace-nowrap lg:text-2xl">
           {tourData?.title}
@@ -24,7 +24,7 @@ export default function OrderItem({ tourData, isCheckout }) {
       <button
         form="checkoutForm"
         disabled={isCheckout}
-        className={`${isCheckout ? "cursor-not-allowed grayscale" : null} bg-primary hover:bg-secondary font-dana-medium w-full rounded-lg py-3 md:text-2xl text-xl  text-white transition-colors duration-200`}
+        className={`${isCheckout ? "cursor-not-allowed grayscale" : null} bg-primary hover:bg-secondary font-dana-medium w-full rounded-lg py-3 text-xl text-white transition-colors duration-200 md:text-2xl`}
       >
         ثبت و خرید نهایی
       </button>
