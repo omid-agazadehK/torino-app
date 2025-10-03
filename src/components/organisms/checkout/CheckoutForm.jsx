@@ -37,13 +37,13 @@ export default function CheckoutForm({ mutate }) {
     <form
       onSubmit={handleSubmit(submitHandler)}
       id="checkoutForm"
-      className="bg-header col-span-17 mt-9 h-fit space-y-5 rounded-lg border border-black/20 px-5 pt-5 pb-7.5"
+      className="bg-header col-span-20 mt-9 h-fit space-y-5 rounded-lg border border-black/20 px-5 pt-5 pb-7.5 md:col-span-13 lg:col-span-14"
     >
       <span className="flex items-center gap-x-3 text-2xl text-black">
         <Icon name={"profile"} className="size-6" />
         مشخصات مسافر
       </span>
-      <div className="grid grid-cols-12 gap-x-4 gap-y-2 *:col-span-4 *:flex *:flex-col">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 *:col-span-4 *:flex *:flex-col max-lg:justify-center">
         <div>
           <input
             {...register("fullName")}
@@ -85,11 +85,9 @@ export default function CheckoutForm({ mutate }) {
                   inputClass=" hover:border-primary focus:border-secondary w-64 rounded-lg border border-black/50 px-2 py-3 transition-colors focus:outline-none"
                   calendarPosition="bottom-right"
                 />
-                {error && (
-                  <span className="flex h-8 items-center text-sm text-red-400">
-                    {error?.message}
-                  </span>
-                )}
+                <span className="flex h-8 items-center text-sm text-red-400">
+                  {error?.message}
+                </span>
               </div>
             )}
           />

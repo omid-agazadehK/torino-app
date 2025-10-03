@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="grid w-full grid-cols-12 border-y border-y-black/20 px-7 pb-2 lg:container lg:px-0">
+    <footer className="grid w-full grid-cols-12 border-y border-y-black/20 px-7 pb-2 max-md:pt-2 lg:container lg:px-0">
       <div className="col-span-12 flex items-center justify-between text-right md:col-span-5 lg:col-span-4">
         <nav>
           <h5 className="font-dana-semiBold mb-4 text-2xl">تورینو</h5>
