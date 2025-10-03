@@ -5,7 +5,7 @@ export default async function sitemap() {
   const tours = await fetch(`${API_URL}/tour`).then((res) => res.json());
   const staticRoutes = [
     {
-      url: "https://example.com",
+      url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
@@ -14,7 +14,7 @@ export default async function sitemap() {
 
   const dynamicRoutes = tours.map((t) => ({
     url: `${BASE_URL}/tours/${t.id}`,
-    lastModified: new Date(t.updatedAt),
+    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.9,
   }));
