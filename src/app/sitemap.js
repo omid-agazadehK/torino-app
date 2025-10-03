@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const tours = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/tour`).then(
+  const tours = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour`).then(
     (res) => res.json(),
   );
   const staticRoutes = [
