@@ -26,7 +26,7 @@ export default function CheckoutForm({ mutate }) {
     mutate(userInfo, {
       onSuccess: async (res) => {
         await queryClient.refetchQueries({ queryKey: ["bookedTours"] });
-        console.log(res);
+        await queryClient.refetchQueries({ queryKey: ["transactions"] });
         toast.success(res.message);
         router.replace(`/checkout/result?status=success`);
       },

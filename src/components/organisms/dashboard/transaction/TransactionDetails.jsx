@@ -5,7 +5,7 @@ export default function TransactionDetails({ transaction }) {
   const { createdAt, amount, orderId } = transaction;
 
   return (
-    <div className="grid grid-cols-12 px-2 py-4 text-xs sm:text-sm md:p-4">
+    <div className="grid grid-cols-12 px-2 py-3.5 text-xs sm:text-sm ">
       <span className="col-span-3 max-sm:text-[8px] md:col-span-3">
         {formatJalaliWithTime(createdAt)}
       </span>

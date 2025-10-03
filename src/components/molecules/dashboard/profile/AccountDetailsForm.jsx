@@ -3,10 +3,12 @@ import { userAccountDetails } from "@/core/schema/userProfile";
 import { useUpdateUser } from "@/core/services/mutation";
 import { useGetUserData } from "@/core/services/query";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 export default function AccountDetailsForm({ setFormStatus }) {
   const { data: userData } = useGetUserData();
+  const queryClient = useQueryClient();
   const {
     register,
     handleSubmit,
@@ -28,6 +30,7 @@ export default function AccountDetailsForm({ setFormStatus }) {
     }
     mutate(data, {
       onSuccess: (data) => {
+        queryClient.invalidateQueries("user");
         setFormStatus((prev) => ({ ...prev, accountForm: false }));
         toast.success(data.message);
       },

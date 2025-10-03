@@ -9,7 +9,7 @@ export default function TourHeader() {
   return (
     <div className="flex items-center justify-between gap-x-5 pb-2 md:pl-6">
       <div className="flex justify-between gap-x-5">
-        <Image src={"/icon1.png"} height={50} width={50} alt="moz" />
+        <Image priority src={"/site-icon.png"} height={50} width={50} className="w-12.5 h-12.5" alt="moz" />
         <h5 className="text-right text-xl md:text-3xl">
           {query.size > 0 ? "تورهای انتخاب شده" : "همه تورها"}
         </h5>

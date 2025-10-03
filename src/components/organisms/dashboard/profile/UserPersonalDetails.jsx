@@ -8,7 +8,14 @@ export default function UserPersonalDetails({ setFormStatus }) {
   const InfoFields = [
     { title: "نام و نام خانوادگی", value: userData?.fullName },
     { title: "کد ملی", value: userData?.nationalCode },
-    { title: "جنسیت", value: userData?.gender === "male" ? "مرد" : "زن" },
+    {
+      title: "جنسیت",
+      value: userData?.gender
+        ? userData?.gender === "male"
+          ? "مرد"
+          : "زن"
+        : undefined,
+    },
     { title: "تاریخ تولد", value: toJalaliDate(userData?.birthDate) },
   ];
 

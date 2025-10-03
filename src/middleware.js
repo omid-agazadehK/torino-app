@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 
-const protectedRoutes = ["/checkout", "/dashboard", "/profile"];
+const protectedRoutes = [
+  "/checkout",
+  "/dashboard",
+  "/profile",
+  "/my-tours",
+  "result",
+];
 
 export async function middleware(req) {
   let accessToken = req.cookies.get("accessToken")?.value;
@@ -15,7 +21,7 @@ export async function middleware(req) {
     if (!accessToken && refreshToken) {
       //request for new accessToken
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/auth/refresh-token`,
+        `${process.env.NEXT_PUBLIC_API_URL}/auth/refresh-token`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
