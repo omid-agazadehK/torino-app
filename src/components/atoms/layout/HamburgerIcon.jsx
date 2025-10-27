@@ -3,7 +3,7 @@ import { SideBarContext } from "@/core/context/SideBarContext";
 import { use } from "react";
 
 function HamburgerIcon({ className }) {
-  const { setIsSideBar,isSideBar } = use(SideBarContext);
+  const { setIsSideBar } = use(SideBarContext);
   return (
     <svg
       onClick={() => setIsSideBar((prev) => !prev)}
