@@ -6,7 +6,7 @@ const checkoutSchema = object({
     .max(20, "نام و نام خانوادگی باید کمتر از 20 حرف باشند"),
   nationalCode: string()
     .required("این فیلد الزامی است")
-    .matches(/^\d{10}$/, "کد ملی باید 10 رقم عددی باشد"),
+    .matches(/^\d{10}$/, "کد ملی را درست وارد کنید"),
   birthDate: date().typeError("تاریخ معتبر نیست").required("تاریخ الزامی است"),
   gender: string().required("لطفا یکی از گزینه ها رو انتخاب بفرمایید"),
 });
