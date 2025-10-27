@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+/* font dana */
+@font-face {
+  font-family: dana-regular;
+  src: url(/fonts/Dana/woff2/DanaFaNum-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: dana-medium;
+  src: url(/fonts/Dana/woff2/DanaFaNum-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: dana-semiBold;
+  src: url(/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+/* font morabba */
+@font-face {
+  font-family: morabba-light;
+  src: url(/fonts/Morabba/woff2/Morabba-light.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: morabba-medium;
+  src: url(/fonts/Morabba/woff2/Morabba-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: morabba-bold;
+  src: url(/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+@theme {
+  /* colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: #f5f5f5;
+  --color-dark: #282828;
+  --color-muted: #555555;
+  --color-header: #f9f9f9;
+  /* fonts */
+  --font-dana-regular: "dana-regular";
+  --font-dana-medium: "dana-medium";
+  --font-dana-semiBold: "dana-semiBold";
+  --font-morabba-light: "morabba-light";
+  --font-morabba-medium: "morabba-medium";
+  --font-morabba-bold: "morabba-bold";
+
+  /* breakpoints */
+  --radius-2.5xl: 1.25rem;
+  /* breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 25rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+}
+:root {
+  --primary: #00b3c7;
+  --secondary: #ff7a59;
+}
+
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.info-line {
+  position: relative;
+}
+.info-line::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  left: 30%;
+  bottom: 50%;
+  transform: translateY(50%);
+  height: calc(100% + 30px);
+  background-color: #00000040;
+}
+.dropDown-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.card-image {
+  outline: calc(160px / 2) solid rgba(0, 0, 0, 0.329);
+  outline-offset: calc(160px / -2);
+  border-radius: 12px 12px 0 0px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card-image:hover {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
+}
+@media only screen and (max-width: 48rem) {
+  .card-image {
+    outline: none;
+    outline-offset: none;
+    border-radius: 0;
+    cursor: default;
+  }
+  .card-image:hover {
+    outline: none;
+    outline-offset: none;
+  }
+}
+.register-modal-animation {
+  animation: dropIn 0.5s ease-out forwards;
+}
+@keyframes dropIn {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.login-modal-animation {
+  animation: rightIn 0.5s ease-out forwards;
+}
+@keyframes rightIn {
+  0% {
+    opacity: 0.3;
+    transform: translatex(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+/* Spinner Animation */
+.spinner {
+  border: 4px solid;
+  border-color: var(--primary) transparent transparent var(--primary);
+  border-radius: 50%;
+  animation: spin 1s ease-out infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Skeleton Animation */
+
+.bg-skeleton {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+/* ===== Datepicker Overrides ===== */
+.rmdp-arrow {
+  border-color: var(--primary) !important;
+}
+.rmdp-arrow-container:hover {
+  background-color: var(--primary) !important;
+}
+.rmdp-arrow-container:hover > .rmdp-arrow {
+  border-color: white !important;
+}
+.rmdp-range {
+  height: 25px !important;
+  width: 25px !important;
+  border-radius: 4px;
+  background-color: var(--primary) !important;
+}
+.sd {
+  font-size: 12px !important;
+}
+.sd:hover {
+  background-color: var(--primary) !important;
+}
+.rmdp-today > span {
+  background-color: var(--secondary) !important;
+}
+.rmdp-week-day {
+  color: var(--primary) !important;
+}
+
+/* ===== Swiper Overrides ===== */
+
+@media only screen and (max-width: 40rem) {
+  .swiper-wrapper {
+    width: 20rem !important;
+  }
+}
+@media only screen and (max-width: 25rem) {
+  .swiper-wrapper {
+    width: 15rem !important;
+  }
+}
+
+.swiper-slide-shadow {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.swiper-button-disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+/* ===== webkit Overrides ===== */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100%;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 100%;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: filter 0.15s ease, transform 0.12s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.92);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* ===== OTP Overrides ===== */
+.otp-style {
+  width: 52px !important;
+  height: 52px !important;
+}
+@media only screen and (max-width: 40rem) {
+  .otp-style {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+/* ===== Toastify Overrides ===== */
+.Toastify__progress-bar--success {
+  background: var(--primary) !important;
+}
+
+.Toastify__toast--success > .Toastify--animate-icon > svg {
+  fill: var(--primary) !important;
+}
+@media (max-width: 48rem) {
+  .Toastify__toast {
+    max-width: 80% !important;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 13px;
+    padding: 10px;
+  }
+}

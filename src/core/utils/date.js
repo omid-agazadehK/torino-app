@@ -86,7 +86,6 @@ export function formatJalaliWithTime(isoDateStr) {
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
 
-  // فرمت نهایی
   return `${jy}/${jm.toString().padStart(2, "0")}/${jd
     .toString()
     .padStart(2, "0")} - ${hours}:${minutes}`;
@@ -103,7 +102,6 @@ export function toJalaliDate(isoDateStr) {
     date.getDate(),
   );
 
-  // خروجی در فرمت yyyy/mm/dd
   return `${jy}/${jm.toString().padStart(2, "0")}/${jd
     .toString()
     .padStart(2, "0")}`;

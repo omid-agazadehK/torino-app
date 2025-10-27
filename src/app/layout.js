@@ -1,5 +1,5 @@
 import Footer from "@/components/organisms/layout/Footer";
-import "../style/globals.css";
+import "./globals.css";
 import Header from "@/components/organisms/layout/Header";
 import AuthModals from "@/components/templates/layout/AuthModals";
 import Provider from "@/core/providers/Provider";
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
           <SideBar />
           {children}
           <Footer />
-          <span className="col-span-12 w-full py-2 text-center max-sm:text-xs">
+          <span className=" w-full py-2 text-center max-sm:text-xs">
             کلیه حقوق این وب سایت متعلق به تورینو میباشد.
           </span>
         </Provider>
