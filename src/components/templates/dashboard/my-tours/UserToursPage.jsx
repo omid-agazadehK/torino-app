@@ -7,7 +7,7 @@ export default function UserToursPage() {
   const { data: tours, isPending } = useGetUserTours();
 
   if (isPending) return <SkeletonUserTours />;
-  if (!tours)
+  if (tours.length === 0)
     return (
       <span className="font-morabba-medium col-span-9 mt-10 text-center text-3xl">
         شما هیچ توری ندارید
