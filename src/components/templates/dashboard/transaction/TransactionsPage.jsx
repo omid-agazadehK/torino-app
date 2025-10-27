@@ -32,13 +32,12 @@ export default function TransactionsPage() {
           ))}
         </div>
         {!isPending && (
-          <div className="border-t border-black/20 py-2">
+          
             <Pagination
               limit={8}
               data={transactionsData}
               setState={setPaginatedData}
             />
-          </div>
         )}
       </section>
     </>
